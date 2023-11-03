@@ -15,6 +15,10 @@
         header('Location: /home.php');
     }
 
+    if (in_array($_SERVER['REQUEST_URI'], ["/home.php", "/logout.php"]) && !$loggedIn) {
+        header('Location: /login.php');
+    }
+
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
