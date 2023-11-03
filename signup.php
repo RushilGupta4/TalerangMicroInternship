@@ -11,7 +11,7 @@
     $confirmPassword = $_POST['confirmPassword'];
 
     $captcha = $_POST['g-recaptcha-response'];
-    $secretKey = "6LfKsfAoAAAAAGSh73SfVJzmIrLTlQUWcVyoM5c4";
+    $secretKey = getenv("recaptchaSecret");
     $ip = $_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$captcha&remoteip=$ip";
 
